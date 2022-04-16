@@ -7,6 +7,7 @@ export const data = [
       {
         id: 1,
         name: "Resturant 1",
+        image: "https://picsum.photos/id/237/100/100",
         meals: [
           {
             id: 1,
@@ -34,6 +35,7 @@ export const data = [
       {
         id: 2,
         name: "Resturant 2",
+        image: "https://picsum.photos/id/237/100/100",
         meals: [
           {
             id: 1,
@@ -54,6 +56,7 @@ export const data = [
       {
         id: 3,
         name: "Resturant 3",
+        image: "https://picsum.photos/id/237/100/100",
         meals: [
           {
             id: 1,
@@ -88,6 +91,7 @@ export const data = [
       {
         id: 1,
         name: "Resturant 1",
+        image: "https://picsum.photos/id/237/100/100",
         meals: [
           {
             id: 1,
@@ -115,6 +119,7 @@ export const data = [
       {
         id: 2,
         name: "Resturant 2",
+        image: "https://picsum.photos/id/237/100/100",
         meals: [
           {
             id: 1,
@@ -135,6 +140,7 @@ export const data = [
       {
         id: 3,
         name: "Resturant 3",
+        image: "https://picsum.photos/id/237/100/100",
         meals: [
           {
             id: 1,
@@ -169,6 +175,7 @@ export const data = [
       {
         id: 1,
         name: "Resturant 1",
+        image: "https://picsum.photos/id/237/100/100",
         meals: [
           {
             id: 1,
@@ -196,6 +203,7 @@ export const data = [
       {
         id: 2,
         name: "Resturant 2",
+        image: "https://picsum.photos/id/237/100/100",
         meals: [
           {
             id: 1,
@@ -216,6 +224,7 @@ export const data = [
       {
         id: 3,
         name: "Resturant 3",
+        image: "https://picsum.photos/id/237/100/100",
         meals: [
           {
             id: 1,

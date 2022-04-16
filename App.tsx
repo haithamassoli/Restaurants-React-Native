@@ -12,15 +12,28 @@ import Home from "./screens/Home";
 import Register from "./screens/Register";
 import AllCities from "./screens/AllCities";
 import Search from "./screens/Search";
+import Meals from "./screens/Meals";
 
 const Stack = createNativeStackNavigator();
 const BottomTabs = createBottomTabNavigator();
 const Drawer = createDrawerNavigator();
 
+interface MealsProps {
+  route: any;
+  navigation?: any;
+}
+
 interface bottomTabsNavigationProps {
   route: any;
   navigation?: any;
 }
+
+function meals({ route, navigation }: MealsProps) {
+  <Stack.Navigator>
+    <Stack.Screen name="Meals" component={Meals} />
+  </Stack.Navigator>;
+}
+
 function BottomTabsNavigation({
   route,
   navigation,
@@ -32,7 +45,10 @@ function BottomTabsNavigation({
         tabBarIconStyle: { display: "none" },
         tabBarLabelStyle: { display: "none" },
         headerRight: () => (
-          <Text onPress={() => navigation.replace("AllCities")}>
+          <Text
+            style={{ marginHorizontal: 20 }}
+            onPress={() => navigation.replace("AllCities")}
+          >
             {route.params.city}
           </Text>
         ),
@@ -87,6 +103,7 @@ function BottomTabsNavigation({
           tabBarIconStyle: { display: "flex" },
         }}
       />
+      <BottomTabs.Screen name="Meals" component={Meals} />
     </BottomTabs.Navigator>
   );
 }
