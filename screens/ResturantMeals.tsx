@@ -8,30 +8,34 @@ import {
 } from "react-native";
 import { data } from "../data";
 
-interface allCitiesProps {
+interface mealsProps {
   navigation?: any;
   route?: any;
 }
-const AllCities = ({ route, navigation }: allCitiesProps) => {
+const ResturantMeals = ({ route, navigation }: mealsProps) => {
+  const filteredResturants = data
+    .filter((city) => city.id === route.params.cityId)
+    .filter((res) =>
+      res.resturants.filter(
+        (resturant) => resturant.id === route.params.resturantId
+      )
+    );
   return (
     <ScrollView style={{ flex: 1 }}>
       <View style={styles.outerContainer}>
-        {data.map((city) => (
+        {filteredResturants.map((city) => (
           <View key={city.id} style={styles.innerContainer}>
             <Pressable
               onPress={() =>
-                navigation.replace("UserOverview", {
-                  screen: "Home",
-                  params: {
-                    id: city.id,
-                    city: city.city,
-                  },
+                navigation.replace("BottomTabsNavigation", {
+                  id: city.id,
+                  city: city.city,
                 })
               }
             >
               <Image
                 source={{ uri: city.cityImage }}
-                style={{ flex: 1, height: 100 }}
+                style={{ width: 100, height: 100 }}
                 width={100}
                 height={100}
               />
@@ -44,7 +48,7 @@ const AllCities = ({ route, navigation }: allCitiesProps) => {
   );
 };
 
-export default AllCities;
+export default ResturantMeals;
 
 const styles = StyleSheet.create({
   outerContainer: {

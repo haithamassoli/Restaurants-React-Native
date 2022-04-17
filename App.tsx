@@ -4,7 +4,6 @@ import { StyleSheet, Text, View, Pressable } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { createDrawerNavigator } from "@react-navigation/drawer";
 
 import { Ionicons } from "@expo/vector-icons";
 
@@ -12,32 +11,30 @@ import Home from "./screens/Home";
 import Register from "./screens/Register";
 import AllCities from "./screens/AllCities";
 import Search from "./screens/Search";
-import Meals from "./screens/Meals";
+import ResturantMeals from "./screens/ResturantMeals";
 
 const Stack = createNativeStackNavigator();
 const BottomTabs = createBottomTabNavigator();
-const Drawer = createDrawerNavigator();
 
 interface MealsProps {
   route: any;
   navigation?: any;
 }
 
-interface bottomTabsNavigationProps {
+interface userOverviewProps {
   route: any;
   navigation?: any;
 }
 
-function meals({ route, navigation }: MealsProps) {
-  <Stack.Navigator>
-    <Stack.Screen name="Meals" component={Meals} />
-  </Stack.Navigator>;
+function Meals({ route, navigation }: MealsProps) {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name="ResturantMeals" component={ResturantMeals} />
+    </Stack.Navigator>
+  );
 }
 
-function BottomTabsNavigation({
-  route,
-  navigation,
-}: bottomTabsNavigationProps) {
+function UserOverview({ route, navigation }: userOverviewProps) {
   return (
     <BottomTabs.Navigator
       screenOptions={{
@@ -103,7 +100,13 @@ function BottomTabsNavigation({
           tabBarIconStyle: { display: "flex" },
         }}
       />
-      <BottomTabs.Screen name="Meals" component={Meals} />
+      <BottomTabs.Screen
+        name="Meals"
+        component={Meals}
+        options={{
+          tabBarItemStyle: { display: "none" },
+        }}
+      />
     </BottomTabs.Navigator>
   );
 }
@@ -116,8 +119,8 @@ export default function App() {
         <Stack.Navigator>
           <Stack.Screen name="AllCities" component={AllCities} />
           <Stack.Screen
-            name="BottomTabsNavigation"
-            component={BottomTabsNavigation}
+            name="UserOverview"
+            component={UserOverview}
             options={{
               title: "Haitham",
               headerTitleStyle: {
@@ -127,8 +130,8 @@ export default function App() {
               headerShown: false,
             }}
           />
+          <Stack.Screen name="Home" component={Home} />
         </Stack.Navigator>
-        <Stack.Screen name="Home" component={Home} />
       </NavigationContainer>
     </>
   );

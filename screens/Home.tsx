@@ -17,15 +17,18 @@ const Home = ({ route, navigation }: resturantsCityProps) => {
   return (
     <ScrollView>
       {data
-        .filter((city) => city.city === "Amman")
+        .filter((city) => city.city === route.params.city)
         .map((city) =>
           city.resturants.map((resturant) => (
             <View key={resturant.id} style={styles.innerContainer}>
               <Pressable
                 onPress={() =>
                   navigation.navigate("Meals", {
-                    resturantId: resturant.id,
-                    cityId: city.id,
+                    screen: "ResturantMeals",
+                    params: {
+                      resturantId: resturant.id,
+                      cityId: city.id,
+                    },
                     // city: resturant.name,
                   })
                 }
