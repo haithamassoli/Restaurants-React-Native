@@ -12,6 +12,8 @@ import Register from "./screens/Register";
 import AllCities from "./screens/AllCities";
 import Search from "./screens/Search";
 import ResturantMeals from "./screens/ResturantMeals";
+import Meal from "./screens/Meal";
+import Favorite from "./screens/Favorite";
 
 const Stack = createNativeStackNavigator();
 const BottomTabs = createBottomTabNavigator();
@@ -30,6 +32,7 @@ function Meals({ route, navigation }: MealsProps) {
   return (
     <Stack.Navigator>
       <Stack.Screen name="ResturantMeals" component={ResturantMeals} />
+      <Stack.Screen name="Meal" component={Meal} />
     </Stack.Navigator>
   );
 }
@@ -46,14 +49,9 @@ function UserOverview({ route, navigation }: userOverviewProps) {
             style={{ marginHorizontal: 20 }}
             onPress={() => navigation.replace("AllCities")}
           >
-            {route.params.city}
+            {route.params.params.city}
           </Text>
         ),
-        //   <View>
-        //   <Pressable onPress={() => navigation.replace("AllCities")}>
-        //     <Text>{route.params.city}</Text>,
-        //   </Pressable>
-        // </View>
         // headerStyle: {  },
         // headerTintColor: "white",
         // tabBarActiveTintColor: "blue",
@@ -81,8 +79,8 @@ function UserOverview({ route, navigation }: userOverviewProps) {
         }}
       />
       <BottomTabs.Screen
-        name="AllEasdasdxssspenses"
-        component={Home}
+        name="Favorite"
+        component={Favorite}
         options={{
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="heart" color={"black"} size={size} />

@@ -8,28 +8,28 @@ import {
 } from "react-native";
 import { data } from "../data";
 
-interface mealsProps {
+interface mealProps {
   navigation?: any;
   route?: any;
 }
-const ResturantMeals = ({ route, navigation }: mealsProps) => {
-  const filteredResturantsCity = data.filter(
-    (city) => city.id === route.params.cityId
-  );
+const Meal = ({ route, navigation }: mealProps) => {
+  // const filteredResturantsCity = data.filter(
+  //   (city) => city.id === route.params.cityId
+  // );
 
-  const filteredResturants = filteredResturantsCity[0].resturants.filter(
-    (resturant) => resturant.id === route.params.resturantId
-  );
+  // const filteredResturants = filteredResturantsCity[0].resturants.filter(
+  //   (resturant) => resturant.id === route.params.resturantId
+  // );
   // console.log(filteredResturants);
-  // console.log(route.params);
+  console.log(route.params);
   return (
     <ScrollView style={{ flex: 1 }}>
-      <View style={styles.outerContainer}>
+      {/* <View style={styles.outerContainer}>
         {filteredResturants[0].meals.map((meal) => (
           <View key={meal.id} style={styles.innerContainer}>
             <Pressable
               onPress={() =>
-                navigation.navigate("Meal", {
+                navigation.replace("BottomTabsNavigation", {
                   mealId: meal.id,
                 })
               }
@@ -44,12 +44,12 @@ const ResturantMeals = ({ route, navigation }: mealsProps) => {
             </Pressable>
           </View>
         ))}
-      </View>
+      </View> */}
     </ScrollView>
   );
 };
 
-export default ResturantMeals;
+export default Meal;
 
 const styles = StyleSheet.create({
   outerContainer: {
