@@ -4,9 +4,10 @@ import { Colors } from "../../constants/Colors";
 interface ButtonProps {
   children: string;
   style?: {};
+  onPress?: () => void;
 }
 
-const Button = ({ children, style }: ButtonProps) => {
+const Button = ({ children, style, onPress }: ButtonProps) => {
   return (
     <View style={[styles.outerContainer, style]}>
       <Pressable
@@ -15,6 +16,7 @@ const Button = ({ children, style }: ButtonProps) => {
           pressed && styles.press,
         ]}
         android_ripple={{ borderless: true }}
+        onPress={onPress}
       >
         <Text style={[styles.text]}>{children}</Text>
       </Pressable>
@@ -29,7 +31,6 @@ const styles = StyleSheet.create({
     opacity: 0.5,
   },
   outerContainer: {
-    margin: 10,
     borderRadius: 10,
     elevation: 10,
     shadowColor: "black",

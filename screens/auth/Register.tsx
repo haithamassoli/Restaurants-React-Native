@@ -1,7 +1,7 @@
 import { useLayoutEffect } from "react";
 import { View, Text, StyleSheet, Image } from "react-native";
-import Button from "../components/ui/Button";
-import { Colors } from "../constants/Colors";
+import Button from "../../components/ui/Button";
+import { Colors } from "../../constants/Colors";
 
 interface registerProps {
   navigation: any;
@@ -23,7 +23,7 @@ const Register = ({ navigation }: registerProps) => {
           position: "absolute",
           resizeMode: "cover",
         }}
-        source={require("../assets/RegisterBackground.png")}
+        source={require("../../assets/RegisterBackground.png")}
       />
       <View style={styles.container}>
         <View
@@ -37,7 +37,7 @@ const Register = ({ navigation }: registerProps) => {
         >
           <Image
             style={{ width: "50%", height: 100, marginTop: 20, zIndex: 2 }}
-            source={require("../assets/White-Logo.png")}
+            source={require("../../assets/White-Logo.png")}
           />
         </View>
         <View
@@ -54,21 +54,34 @@ const Register = ({ navigation }: registerProps) => {
               <Image
                 width={30}
                 height={30}
-                source={require("../assets/Google-Logo.png")}
+                source={require("../../assets/Google-Logo.png")}
               />
             </View>
             <View style={styles.imageContainer}>
               <Image
                 width={30}
                 height={30}
-                source={require("../assets/Apple-Logo.png")}
+                source={require("../../assets/Apple-Logo.png")}
               />
             </View>
           </View>
-          <Button style={{ backgroundColor: Colors.primary }}>Sign Up</Button>
+          <Button
+            style={{ backgroundColor: Colors.primary }}
+            onPress={() =>
+              navigation.navigate("Login", {
+                register: "signup",
+              })
+            }
+          >
+            Sign Up
+          </Button>
           <Text
             style={styles.text}
-            onPress={() => alert("Sign Up with Facebook")}
+            onPress={() =>
+              navigation.navigate("Login", {
+                register: "login",
+              })
+            }
           >
             Have an account?
             <Text
@@ -104,6 +117,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: "white",
     textAlign: "center",
+    marginTop: 20,
   },
   imageContainer: {
     marginHorizontal: 10,

@@ -8,12 +8,13 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from "@expo/vector-icons";
 
 import Home from "./screens/Home";
-import Register from "./screens/Register";
+import Register from "./screens/auth/Register";
 import AllCities from "./screens/AllCities";
 import Search from "./screens/Search";
 import ResturantMeals from "./screens/ResturantMeals";
 import Meal from "./screens/Meal";
 import Favorite from "./screens/Favorite";
+import Login from "./screens/auth/Login";
 
 const Stack = createNativeStackNavigator();
 const BottomTabs = createBottomTabNavigator();
@@ -101,6 +102,13 @@ function UserOverview({ route, navigation }: userOverviewProps) {
       <BottomTabs.Screen
         name="Meals"
         component={Meals}
+        options={{
+          tabBarItemStyle: { display: "none" },
+        }}
+      />
+      <BottomTabs.Screen
+        name="Login"
+        component={Login}
         options={{
           tabBarItemStyle: { display: "none" },
         }}
