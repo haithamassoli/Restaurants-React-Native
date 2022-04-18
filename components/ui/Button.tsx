@@ -25,7 +25,9 @@ const Button = ({ children, style }: ButtonProps) => {
 export default Button;
 
 const styles = StyleSheet.create({
-  press: {},
+  press: {
+    opacity: 0.5,
+  },
   outerContainer: {
     margin: 10,
     borderRadius: 10,
@@ -37,10 +39,13 @@ const styles = StyleSheet.create({
   },
 
   innerContainer: {
-    padding: 20,
+    paddingHorizontal: 20,
+    paddingVertical: 15,
   },
   text: {
-    fontSize: 13,
-    color: Colors.secondary,
+    fontSize: 15,
+    color: "white",
+    textAlign: "center",
+    fontWeight: "bold",
   },
 });

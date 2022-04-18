@@ -8,14 +8,16 @@ export const data = [
       {
         id: 1,
         name: "Resturant 1",
-        image: "https://picsum.photos/id/237/100/100",
+        image:
+          "https://cphimageprocessor.azurewebsites.net/merchants/merchant-86985568-a0e0-48af-8de0-e248956e5e59.jpg",
         meals: [
           {
             id: 1,
             name: "Meal 1",
             price: "10",
             description: "Meal 1 description",
-            image: "https://picsum.photos/id/237/100/100",
+            image:
+              "https://www.thestreet.com/.image/t_share/MTg3NTA5NzAzMTQ2NzQzMzU2/burger-king-yeti-super-one-pound-beef-burger.jpg",
           },
           {
             id: 2,
@@ -57,14 +59,16 @@ export const data = [
       {
         id: 3,
         name: "Resturant 3",
-        image: "https://picsum.photos/id/237/100/100",
+        image:
+          "https://image.cnbcfm.com/api/v1/image/106936180-1630511993739-gettyimages-1234486065-PWeaver-Milton-210804-04.jpeg?v=1630512088",
         meals: [
           {
             id: 1,
             name: "Meal 1",
             price: "10",
             description: "Meal 1 description",
-            image: "https://picsum.photos/id/237/100/100",
+            image:
+              "https://www.thestreet.com/.image/t_share/MTg3NTA5NzAzMTQ2NzQzMzU2/burger-king-yeti-super-one-pound-beef-burger.jpg",
           },
           {
             id: 2,
@@ -193,7 +197,8 @@ export const data = [
             name: "Meal 2",
             price: "20",
             description: "Meal 2 description",
-            image: "https://picsum.photos/id/7/100/100",
+            image:
+              "https://www.thestreet.com/.image/t_share/MTg3NTA5NzAzMTQ2NzQzMzU2/burger-king-yeti-super-one-pound-beef-burger.jpg",
           },
           {
             id: 3,

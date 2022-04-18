@@ -13,26 +13,29 @@ interface mealProps {
   route?: any;
 }
 const Meal = ({ route, navigation }: mealProps) => {
-  // const filteredResturantsCity = data.filter(
-  //   (city) => city.id === route.params.cityId
-  // );
+  const filteredResturantsCity = data.filter(
+    (city) => city.id === route.params.cityId
+  );
 
-  // const filteredResturants = filteredResturantsCity[0].resturants.filter(
-  //   (resturant) => resturant.id === route.params.resturantId
-  // );
-  // console.log(filteredResturants);
-  console.log(route.params);
+  const filteredResturants = filteredResturantsCity[0].resturants.filter(
+    (resturant) => resturant.id === route.params.resturantId
+  );
+
+  const filteredMeal = filteredResturants[0].meals.filter(
+    (meal) => meal.id === route.params.mealId
+  );
+
   return (
     <ScrollView style={{ flex: 1 }}>
-      {/* <View style={styles.outerContainer}>
-        {filteredResturants[0].meals.map((meal) => (
+      <View style={styles.outerContainer}>
+        {filteredMeal.map((meal) => (
           <View key={meal.id} style={styles.innerContainer}>
             <Pressable
-              onPress={() =>
-                navigation.replace("BottomTabsNavigation", {
-                  mealId: meal.id,
-                })
-              }
+            // onPress={() =>
+            //   navigation.replace("BottomTabsNavigation", {
+            //     mealId: meal.id,
+            //   })
+            // }
             >
               <Image
                 source={{ uri: meal.image }}
@@ -44,7 +47,7 @@ const Meal = ({ route, navigation }: mealProps) => {
             </Pressable>
           </View>
         ))}
-      </View> */}
+      </View>
     </ScrollView>
   );
 };

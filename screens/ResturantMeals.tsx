@@ -31,6 +31,8 @@ const ResturantMeals = ({ route, navigation }: mealsProps) => {
               onPress={() =>
                 navigation.navigate("Meal", {
                   mealId: meal.id,
+                  cityId: route.params.cityId,
+                  resturantId: route.params.resturantId,
                 })
               }
             >
