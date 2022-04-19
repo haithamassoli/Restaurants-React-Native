@@ -5,7 +5,7 @@ export const Colors = {
   darkGreen: "rgb(58,149,60)",
   secondary: "rgb(15,23,43)",
   secondaryDark: "#ffa000",
-  secondaryLight: "#ffff8d",
+  secondaryLight: "#999999",
   tertiary: "#ff5722",
   tertiaryDark: "#c62828",
   tertiaryLight: "#ffa000",

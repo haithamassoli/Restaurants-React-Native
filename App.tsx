@@ -21,6 +21,7 @@ import ResturantMeals from "./screens/ResturantMeals";
 import Meal from "./screens/Meal";
 import Favorite from "./screens/Favorite";
 import Login from "./screens/auth/Login";
+import { Colors } from "./constants/Colors";
 
 const Stack = createNativeStackNavigator();
 const BottomTabs = createBottomTabNavigator();
@@ -47,24 +48,33 @@ function Meals({ route, navigation }: MealsProps) {
           // headerShown: false,
           title: "",
           headerLeft: () => (
-            <Text
-              style={{ marginHorizontal: 20 }}
-              onPress={() => navigation.navigate("AllCities")}
-            >
-              {route.params && route.params.params
-                ? route.params.params.city
-                : "Amman"}
-            </Text>
+            <>
+              <Text
+                style={{ marginHorizontal: 20 }}
+                onPress={() => navigation.navigate("AllCities")}
+              >
+                {route.params && route.params.params
+                  ? route.params.params.city
+                  : "Amman"}
+              </Text>
+            </>
           ),
           headerRight: () => (
-            <Text
-              style={{ marginHorizontal: 20 }}
-              onPress={() => navigation.navigate("AllCities")}
-            >
-              {route.params && route.params.params
-                ? route.params.params.city
-                : "Amman"}
-            </Text>
+            <>
+              <Ionicons
+                name="location-outline"
+                color={Colors.primary}
+                size={20}
+              />
+              <Text
+                style={{ marginRight: 20 }}
+                onPress={() => navigation.navigate("AllCities")}
+              >
+                {route.params && route.params.params
+                  ? route.params.params.city
+                  : "Amman"}
+              </Text>
+            </>
           ),
         }}
       />
@@ -82,6 +92,7 @@ export default function App() {
         <NavigationContainer>
           <BottomTabs.Navigator
             screenOptions={({ navigation, route }: any) => ({
+              tabBarActiveTintColor: Colors.primary,
               contentStyle: { backgroundColor: "#fff" },
               tabBarStyle: styles.bottomTabs,
               tabBarIconStyle: { display: "none" },
@@ -109,7 +120,7 @@ export default function App() {
               component={Meals}
               options={{
                 tabBarIcon: ({ color, size }) => (
-                  <Ionicons name="home" color={"black"} size={size} />
+                  <Ionicons name="home" color={color} size={size} />
                 ),
                 tabBarIconStyle: { display: "flex" },
               }}
@@ -128,7 +139,7 @@ export default function App() {
               component={Search}
               options={{
                 tabBarIcon: ({ color, size }) => (
-                  <Ionicons name="search" color={"black"} size={size} />
+                  <Ionicons name="search" color={color} size={size} />
                 ),
                 tabBarIconStyle: { display: "flex" },
               }}
@@ -138,7 +149,7 @@ export default function App() {
               component={Favorite}
               options={{
                 tabBarIcon: ({ color, size }) => (
-                  <Ionicons name="heart" color={"black"} size={size} />
+                  <Ionicons name="heart" color={color} size={size} />
                 ),
                 tabBarIconStyle: { display: "flex" },
               }}
@@ -148,7 +159,7 @@ export default function App() {
               component={Register}
               options={{
                 tabBarIcon: ({ color, size }) => (
-                  <Ionicons name="person" color={"black"} size={size} />
+                  <Ionicons name="person" color={color} size={size} />
                 ),
                 tabBarIconStyle: { display: "flex" },
               }}

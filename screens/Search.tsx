@@ -14,13 +14,14 @@ const Search = () => {
         <Ionicons
           name="ios-search"
           size={24}
-          color={Colors.primary}
+          color={Colors.secondary}
           style={styles.searchIcon}
         />
         <TextInput
           value={searchInput}
           onChange={(searchString) => setSearchInput(searchString)}
           placeholder="Search..."
+          placeholderTextColor={Colors.secondary}
           style={styles.searchInput}
         />
       </View>
@@ -52,12 +53,13 @@ const styles = StyleSheet.create({
     paddingRight: 20,
     paddingVertical: 10,
     borderRadius: 5,
-    borderColor: Colors.secondary,
-    borderWidth: 1,
+    backgroundColor: Colors.secondaryLight,
+    opacity: 0.5,
     width: "100%",
   },
   searchIcon: {
     position: "absolute",
     left: 10,
+    zIndex: 10,
   },
 });
