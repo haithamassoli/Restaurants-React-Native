@@ -1,6 +1,12 @@
 import "react-native-gesture-handler";
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, SafeAreaView, Pressable } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  SafeAreaView,
+  Platform,
+  StatusBar as reactNativeStatusBar,
+} from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
@@ -31,7 +37,9 @@ interface userOverviewProps {
 
 function Meals({ route, navigation }: MealsProps) {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator
+      screenOptions={{ contentStyle: { backgroundColor: "white" } }}
+    >
       <Stack.Screen
         name="ResturantsCity"
         component={Home}
@@ -141,10 +149,12 @@ export default function App() {
         <NavigationContainer>
           <BottomTabs.Navigator
             screenOptions={({ navigation, route }: any) => ({
+              contentStyle: { backgroundColor: "#fff" },
               tabBarStyle: styles.bottomTabs,
               tabBarIconStyle: { display: "none" },
               tabBarLabelStyle: { display: "none" },
               headerShown: false,
+              cardStyle: { backgroundColor: "white" },
               headerRight: () => (
                 <Text
                   style={{ marginHorizontal: 20 }}
@@ -255,7 +265,14 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     elevation: 10,
     shadowColor: "black",
+    backgroundColor: "#fff",
     shadowOpacity: 0.2,
     shadowRadius: 10,
+  },
+  safeAreaView: {
+    flex: 1,
+    backgroundColor: "white",
+    paddingTop:
+      Platform.OS === "android" ? reactNativeStatusBar.currentHeight : 0,
   },
 });

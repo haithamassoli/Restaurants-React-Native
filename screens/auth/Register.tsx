@@ -49,24 +49,8 @@ const Register = ({ navigation }: registerProps) => {
             marginBottom: 100,
           }}
         >
-          <View style={styles.flex}>
-            <View style={styles.imageContainer}>
-              <Image
-                width={30}
-                height={30}
-                source={require("../../assets/Google-Logo.png")}
-              />
-            </View>
-            <View style={styles.imageContainer}>
-              <Image
-                width={30}
-                height={30}
-                source={require("../../assets/Apple-Logo.png")}
-              />
-            </View>
-          </View>
           <Button
-            style={{ backgroundColor: Colors.primary }}
+            style={{ backgroundColor: Colors.primary, marginHorizontal: 30 }}
             onPress={() =>
               navigation.navigate("Login", {
                 register: "signup",
@@ -74,6 +58,50 @@ const Register = ({ navigation }: registerProps) => {
             }
           >
             Sign Up
+          </Button>
+          <Button
+            style={{
+              backgroundColor: "white",
+              marginHorizontal: 30,
+              marginTop: 10,
+            }}
+            onPress={() =>
+              navigation.navigate("Login", {
+                register: "signup",
+              })
+            }
+          >
+            <Image
+              width={25}
+              height={25}
+              style={{ width: 20, height: 20, paddingRight: 20 }}
+              source={require("../../assets/Google-Logo.png")}
+            />
+            <Text style={{ marginLeft: 20, paddingLeft: 20, color: "#333" }}>
+              Sign Up With
+            </Text>
+          </Button>
+          <Button
+            style={{
+              backgroundColor: "white",
+              marginHorizontal: 30,
+              marginTop: 10,
+            }}
+            onPress={() =>
+              navigation.navigate("Login", {
+                register: "signup",
+              })
+            }
+          >
+            <Image
+              width={25}
+              height={25}
+              style={{ width: 20, height: 20, paddingRight: 20 }}
+              source={require("../../assets/Apple.png")}
+            />
+            <Text style={{ marginLeft: 20, paddingLeft: 20, color: "#333" }}>
+              Sign Up With
+            </Text>
           </Button>
           <Text
             style={styles.text}
@@ -107,22 +135,10 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-  flex: {
-    flexDirection: "row",
-    justifyContent: "center",
-    width: "100%",
-    alignItems: "center",
-  },
   text: {
     fontSize: 16,
     color: "white",
     textAlign: "center",
     marginTop: 20,
-  },
-  imageContainer: {
-    marginHorizontal: 10,
-    padding: 10,
-    justifyContent: "center",
-    alignItems: "center",
   },
 });
