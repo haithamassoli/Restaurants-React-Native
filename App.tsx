@@ -133,7 +133,9 @@ export default function App() {
                 style={{ marginHorizontal: 20 }}
                 onPress={() => navigation.navigate("AllCities")}
               >
-                {route.params ? route.params.params.city : ""}
+                {route.params && route.params.params
+                  ? route.params.params.city
+                  : ""}
               </Text>
             ),
             // headerStyle: {  },
@@ -188,13 +190,6 @@ export default function App() {
                 <Ionicons name="person" color={"black"} size={size} />
               ),
               tabBarIconStyle: { display: "flex" },
-            }}
-          />
-          <BottomTabs.Screen
-            name="Meals"
-            component={Meals}
-            options={{
-              tabBarItemStyle: { display: "none" },
             }}
           />
           <BottomTabs.Screen
