@@ -20,12 +20,11 @@ const ResturantMeals = ({ route, navigation }: mealsProps) => {
   const filteredResturants = filteredResturantsCity[0].resturants.filter(
     (resturant) => resturant.id === route.params.resturantId
   );
-  // console.log(filteredResturants);
-  // console.log(route.params);
+  const mealsData = filteredResturants[0].meals;
   return (
     <ScrollView style={{ flex: 1 }}>
       <View style={styles.outerContainer}>
-        {filteredResturants[0].meals.map((meal) => (
+        {mealsData.map((meal) => (
           <View key={meal.id} style={styles.innerContainer}>
             <Pressable
               onPress={() =>
@@ -38,7 +37,7 @@ const ResturantMeals = ({ route, navigation }: mealsProps) => {
             >
               <Image
                 source={{ uri: meal.image }}
-                style={{ width: 100, height: 100 }}
+                style={{ width: "100%", height: 200, resizeMode: "cover" }}
                 width={100}
                 height={100}
               />
@@ -59,22 +58,25 @@ const styles = StyleSheet.create({
     flexWrap: "wrap",
     flexDirection: "row",
     justifyContent: "space-between",
-    padding: 10,
+    padding: 15,
   },
   innerContainer: {
-    width: "40%",
-    margin: 10,
+    width: "47%",
+    margin: 5,
     borderRadius: 10,
     backgroundColor: "#fff",
     elevation: 10,
     shadowColor: "black",
     shadowOpacity: 0.2,
     shadowRadius: 10,
+    overflow: "hidden",
   },
   text: {
     fontSize: 20,
     position: "absolute",
     bottom: 0,
     left: 0,
+    color: "white",
+    fontWeight: "bold",
   },
 });

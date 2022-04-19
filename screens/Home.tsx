@@ -17,7 +17,9 @@ const Home = ({ route, navigation }: resturantsCityProps) => {
   return (
     <ScrollView>
       {data
-        .filter((city) => city.city === route.params.city)
+        .filter(
+          (city) => city.city === (route.params ? route.params.city : "Amman")
+        )
         .map((city) =>
           city.resturants.map((resturant) => (
             <View key={resturant.id} style={styles.innerContainer}>

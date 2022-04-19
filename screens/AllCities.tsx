@@ -4,9 +4,10 @@ import {
   Text,
   ScrollView,
   StyleSheet,
-  Image,
+  ImageBackground,
   Pressable,
 } from "react-native";
+import { LinearGradient } from "expo-linear-gradient";
 import { data } from "../data";
 
 interface allCitiesProps {
@@ -37,13 +38,17 @@ const AllCities = ({ route, navigation }: allCitiesProps) => {
                 })
               }
             >
-              <Image
-                source={{ uri: city.cityImage }}
-                style={{ flex: 1, height: 100 }}
-                width={100}
-                height={100}
+              <LinearGradient
+                style={styles.linearGradient}
+                colors={["transparent", "transparent", "#111"]}
               />
-              <Text style={styles.text}>{city.city}</Text>
+              <ImageBackground
+                source={{ uri: city.cityImage }}
+                style={{ width: "100%", height: 120 }}
+                height={120}
+              >
+                <Text style={styles.text}>{city.city}</Text>
+              </ImageBackground>
             </Pressable>
           </View>
         ))}
@@ -61,6 +66,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     padding: 10,
+    marginTop: 30,
   },
   innerContainer: {
     width: "40%",
@@ -71,11 +77,22 @@ const styles = StyleSheet.create({
     shadowColor: "black",
     shadowOpacity: 0.2,
     shadowRadius: 10,
+    overflow: "hidden",
+    // justifyContent: "center",
+    // alignItems: "center",
   },
   text: {
     fontSize: 20,
+    textAlign: "center",
+    color: "white",
+    height: 120,
+    textAlignVertical: "center",
+  },
+  linearGradient: {
+    height: 120,
+    width: 200,
+    borderRadius: 10,
     position: "absolute",
-    bottom: 0,
-    left: 0,
+    zIndex: 10,
   },
 });
