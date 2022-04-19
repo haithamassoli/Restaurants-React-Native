@@ -23,12 +23,9 @@ const Home = ({ route, navigation }: resturantsCityProps) => {
             <View key={resturant.id} style={styles.innerContainer}>
               <Pressable
                 onPress={() =>
-                  navigation.navigate("Meals", {
-                    screen: "ResturantMeals",
-                    params: {
-                      resturantId: resturant.id,
-                      cityId: city.id,
-                    },
+                  navigation.navigate("ResturantMeals", {
+                    resturantId: resturant.id,
+                    cityId: city.id,
                     // city: resturant.name,
                   })
                 }

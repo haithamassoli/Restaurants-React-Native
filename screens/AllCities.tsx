@@ -1,3 +1,4 @@
+import { useLayoutEffect } from "react";
 import {
   View,
   Text,
@@ -12,7 +13,14 @@ interface allCitiesProps {
   navigation?: any;
   route?: any;
 }
+
 const AllCities = ({ route, navigation }: allCitiesProps) => {
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      tabBarStyle: { display: "none" },
+    });
+  }, [navigation]);
+
   return (
     <ScrollView style={{ flex: 1 }}>
       <View style={styles.outerContainer}>
@@ -20,8 +28,8 @@ const AllCities = ({ route, navigation }: allCitiesProps) => {
           <View key={city.id} style={styles.innerContainer}>
             <Pressable
               onPress={() =>
-                navigation.replace("UserOverview", {
-                  screen: "Home",
+                navigation.navigate("Home", {
+                  screen: "ResturantsCity",
                   params: {
                     id: city.id,
                     city: city.city,

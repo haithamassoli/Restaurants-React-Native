@@ -32,97 +32,180 @@ interface userOverviewProps {
 function Meals({ route, navigation }: MealsProps) {
   return (
     <Stack.Navigator>
+      <Stack.Screen name="ResturantsCity" component={Home} />
       <Stack.Screen name="ResturantMeals" component={ResturantMeals} />
       <Stack.Screen name="Meal" component={Meal} />
     </Stack.Navigator>
   );
 }
 
-function UserOverview({ route, navigation }: userOverviewProps) {
-  return (
-    <BottomTabs.Navigator
-      screenOptions={{
-        tabBarStyle: styles.bottomTabs,
-        tabBarIconStyle: { display: "none" },
-        tabBarLabelStyle: { display: "none" },
-        headerRight: () => (
-          <Text
-            style={{ marginHorizontal: 20 }}
-            onPress={() => navigation.replace("AllCities")}
-          >
-            {route.params.params.city}
-          </Text>
-        ),
-        // headerStyle: {  },
-        // headerTintColor: "white",
-        // tabBarActiveTintColor: "blue",
-        // headerShown: false,
-      }}
-    >
-      <BottomTabs.Screen
-        name="Home"
-        component={Home}
-        options={{
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name="home" color={"black"} size={size} />
-          ),
-          tabBarIconStyle: { display: "flex" },
-        }}
-      />
-      <BottomTabs.Screen
-        name="Search"
-        component={Search}
-        options={{
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name="search" color={"black"} size={size} />
-          ),
-          tabBarIconStyle: { display: "flex" },
-        }}
-      />
-      <BottomTabs.Screen
-        name="Favorite"
-        component={Favorite}
-        options={{
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name="heart" color={"black"} size={size} />
-          ),
-          tabBarIconStyle: { display: "flex" },
-        }}
-      />
-      <BottomTabs.Screen
-        name="Register"
-        component={Register}
-        options={{
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name="person" color={"black"} size={size} />
-          ),
-          tabBarIconStyle: { display: "flex" },
-        }}
-      />
-      <BottomTabs.Screen
-        name="Meals"
-        component={Meals}
-        options={{
-          tabBarItemStyle: { display: "none" },
-        }}
-      />
-      <BottomTabs.Screen
-        name="Login"
-        component={Login}
-        options={{
-          tabBarItemStyle: { display: "none" },
-        }}
-      />
-    </BottomTabs.Navigator>
-  );
-}
+// function UserOverview({ route, navigation }: userOverviewProps) {
+//   return (
+//     <BottomTabs.Navigator
+//       screenOptions={{
+//         tabBarStyle: styles.bottomTabs,
+//         tabBarIconStyle: { display: "none" },
+//         tabBarLabelStyle: { display: "none" },
+//         headerRight: () => (
+//           <Text
+//             style={{ marginHorizontal: 20 }}
+//             onPress={() => navigation.replace("AllCities")}
+//           >
+//             {route.params.params.city}
+//           </Text>
+//         ),
+//         // headerStyle: {  },
+//         // headerTintColor: "white",
+//         // tabBarActiveTintColor: "blue",
+//         // headerShown: false,
+//       }}
+//     >
+//       <BottomTabs.Screen
+//         name="Home"
+//         component={Home}
+//         options={{
+//           tabBarIcon: ({ color, size }) => (
+//             <Ionicons name="home" color={"black"} size={size} />
+//           ),
+//           tabBarIconStyle: { display: "flex" },
+//         }}
+//       />
+//       <BottomTabs.Screen
+//         name="Search"
+//         component={Search}
+//         options={{
+//           tabBarIcon: ({ color, size }) => (
+//             <Ionicons name="search" color={"black"} size={size} />
+//           ),
+//           tabBarIconStyle: { display: "flex" },
+//         }}
+//       />
+//       <BottomTabs.Screen
+//         name="Favorite"
+//         component={Favorite}
+//         options={{
+//           tabBarIcon: ({ color, size }) => (
+//             <Ionicons name="heart" color={"black"} size={size} />
+//           ),
+//           tabBarIconStyle: { display: "flex" },
+//         }}
+//       />
+//       <BottomTabs.Screen
+//         name="Register"
+//         component={Register}
+//         options={{
+//           tabBarIcon: ({ color, size }) => (
+//             <Ionicons name="person" color={"black"} size={size} />
+//           ),
+//           tabBarIconStyle: { display: "flex" },
+//         }}
+//       />
+//       <BottomTabs.Screen
+//         name="Meals"
+//         component={Meals}
+//         options={{
+//           tabBarItemStyle: { display: "none" },
+//         }}
+//       />
+//       <BottomTabs.Screen
+//         name="Login"
+//         component={Login}
+//         options={{
+//           tabBarItemStyle: { display: "none" },
+//         }}
+//       />
+//     </BottomTabs.Navigator>
+//   );
+// }
 
 export default function App() {
   return (
     <>
       <StatusBar style="auto" />
       <NavigationContainer>
-        <Stack.Navigator>
+        <BottomTabs.Navigator
+          screenOptions={({ navigation, route }: any) => ({
+            tabBarStyle: styles.bottomTabs,
+            tabBarIconStyle: { display: "none" },
+            tabBarLabelStyle: { display: "none" },
+            headerRight: () => (
+              <Text
+                style={{ marginHorizontal: 20 }}
+                onPress={() => navigation.navigate("AllCities")}
+              >
+                {route.params ? route.params.params.city : ""}
+              </Text>
+            ),
+            // headerStyle: {  },
+            // headerTintColor: "white",
+            // tabBarActiveTintColor: "blue",
+            // headerShown: false,
+          })}
+        >
+          <BottomTabs.Screen
+            name="AllCities"
+            component={AllCities}
+            options={({ navigation, route }: any) => ({
+              title: "Pick a city",
+              tabBarItemStyle: { display: "none" },
+            })}
+          />
+          <BottomTabs.Screen
+            name="Home"
+            component={Meals}
+            options={{
+              tabBarIcon: ({ color, size }) => (
+                <Ionicons name="home" color={"black"} size={size} />
+              ),
+              tabBarIconStyle: { display: "flex" },
+            }}
+          />
+          <BottomTabs.Screen
+            name="Search"
+            component={Search}
+            options={{
+              tabBarIcon: ({ color, size }) => (
+                <Ionicons name="search" color={"black"} size={size} />
+              ),
+              tabBarIconStyle: { display: "flex" },
+            }}
+          />
+          <BottomTabs.Screen
+            name="Favorite"
+            component={Favorite}
+            options={{
+              tabBarIcon: ({ color, size }) => (
+                <Ionicons name="heart" color={"black"} size={size} />
+              ),
+              tabBarIconStyle: { display: "flex" },
+            }}
+          />
+          <BottomTabs.Screen
+            name="Register"
+            component={Register}
+            options={{
+              tabBarIcon: ({ color, size }) => (
+                <Ionicons name="person" color={"black"} size={size} />
+              ),
+              tabBarIconStyle: { display: "flex" },
+            }}
+          />
+          <BottomTabs.Screen
+            name="Meals"
+            component={Meals}
+            options={{
+              tabBarItemStyle: { display: "none" },
+            }}
+          />
+          <BottomTabs.Screen
+            name="Login"
+            component={Login}
+            options={{
+              tabBarItemStyle: { display: "none" },
+            }}
+          />
+        </BottomTabs.Navigator>
+        {/* <Stack.Navigator>
           <Stack.Screen name="AllCities" component={AllCities} />
           <Stack.Screen
             name="UserOverview"
@@ -137,7 +220,7 @@ export default function App() {
             }}
           />
           <Stack.Screen name="Home" component={Home} />
-        </Stack.Navigator>
+        </Stack.Navigator> */}
       </NavigationContainer>
     </>
   );
