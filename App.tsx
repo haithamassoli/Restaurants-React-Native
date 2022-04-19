@@ -44,6 +44,18 @@ function Meals({ route, navigation }: MealsProps) {
         name="ResturantsCity"
         component={Home}
         options={{
+          // headerShown: false,
+          title: "",
+          headerLeft: () => (
+            <Text
+              style={{ marginHorizontal: 20 }}
+              onPress={() => navigation.navigate("AllCities")}
+            >
+              {route.params && route.params.params
+                ? route.params.params.city
+                : "Amman"}
+            </Text>
+          ),
           headerRight: () => (
             <Text
               style={{ marginHorizontal: 20 }}

@@ -1,5 +1,5 @@
 import { useLayoutEffect, useState, useEffect } from "react";
-import { View, Text, StyleSheet, TextInput } from "react-native";
+import { View, Text, StyleSheet, TextInput, Image } from "react-native";
 import Checkbox from "expo-checkbox";
 import Button from "../../components/ui/Button";
 import { Colors } from "../../constants/Colors";
@@ -63,8 +63,50 @@ const Login = ({ navigation, route }: loginProps) => {
           }}
           style={styles.button}
         >
-          Submit
+          Sign In
         </Button>
+        {register && (
+          <>
+            <Button
+              style={[
+                styles.button,
+                { marginTop: 10, backgroundColor: "white" },
+              ]}
+              onPress={() =>
+                navigation.navigate("Login", {
+                  register: "signup",
+                })
+              }
+            >
+              <Image
+                width={25}
+                height={25}
+                style={{ width: 20, height: 20 }}
+                source={require("../../assets/Google-Logo.png")}
+              />
+              <Text style={{ color: "#333" }}>&nbsp; Sign In With</Text>
+            </Button>
+            <Button
+              style={[
+                styles.button,
+                { marginTop: 10, backgroundColor: "white" },
+              ]}
+              onPress={() =>
+                navigation.navigate("Login", {
+                  register: "signup",
+                })
+              }
+            >
+              <Image
+                width={25}
+                height={25}
+                style={{ width: 20, height: 20 }}
+                source={require("../../assets/Apple.png")}
+              />
+              <Text style={{ color: "#333" }}>&nbsp; Sign In With</Text>
+            </Button>
+          </>
+        )}
       </View>
     </View>
   );

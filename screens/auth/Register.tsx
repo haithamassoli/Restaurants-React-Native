@@ -74,12 +74,10 @@ const Register = ({ navigation }: registerProps) => {
             <Image
               width={25}
               height={25}
-              style={{ width: 20, height: 20, paddingRight: 20 }}
+              style={{ width: 20, height: 20 }}
               source={require("../../assets/Google-Logo.png")}
             />
-            <Text style={{ marginLeft: 20, paddingLeft: 20, color: "#333" }}>
-              Sign Up With
-            </Text>
+            <Text style={{ color: "#333" }}>&nbsp; Sign Up With</Text>
           </Button>
           <Button
             style={{
@@ -96,12 +94,10 @@ const Register = ({ navigation }: registerProps) => {
             <Image
               width={25}
               height={25}
-              style={{ width: 20, height: 20, paddingRight: 20 }}
+              style={{ width: 20, height: 20 }}
               source={require("../../assets/Apple.png")}
             />
-            <Text style={{ marginLeft: 20, paddingLeft: 20, color: "#333" }}>
-              Sign Up With
-            </Text>
+            <Text style={{ color: "#333" }}>&nbsp; Sign Up With</Text>
           </Button>
           <Text
             style={styles.text}
