@@ -138,7 +138,7 @@ const ResturantMeals = ({ route, navigation }: mealsProps) => {
                       style={{ marginLeft: 10 }}
                       name="star"
                       size={14}
-                      color="yellow"
+                      color={Colors.primaryLight}
                     />
                     <Text>4.6</Text>
                   </View>

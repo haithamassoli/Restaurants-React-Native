@@ -100,7 +100,7 @@ const Meal = ({ route, navigation }: mealProps) => {
               style={{ marginLeft: 10 }}
               name="star"
               size={24}
-              color="yellow"
+              color={Colors.primaryLight}
             />
             <Text style={styles.iconsText}>4.6</Text>
           </View>
@@ -127,7 +127,7 @@ const Meal = ({ route, navigation }: mealProps) => {
                 size={24}
                 color={Colors.primary}
               />
-              <Text>helllllllllllllllo</Text>
+              <Text style={{ marginLeft: 5 }}>Resturan 1</Text>
             </View>
             <View
               style={{
@@ -141,7 +141,7 @@ const Meal = ({ route, navigation }: mealProps) => {
                 color={Colors.primary}
                 size={20}
               />
-              <Text>helllllllllllllllo</Text>
+              <Text>Amman</Text>
             </View>
           </View>
         </View>
