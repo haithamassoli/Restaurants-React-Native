@@ -11,6 +11,7 @@ import {
 import { data, categories } from "../data";
 import Carousel, { Pagination } from "react-native-snap-carousel";
 import { Colors } from "../constants/Colors";
+import { Ionicons } from "@expo/vector-icons";
 
 interface mealsProps {
   navigation?: any;
@@ -109,11 +110,45 @@ const ResturantMeals = ({ route, navigation }: mealsProps) => {
             >
               <Image
                 source={{ uri: meal.image }}
-                style={{ width: "100%", height: 200, resizeMode: "cover" }}
+                style={{ width: "100%", height: 125, resizeMode: "cover" }}
                 width={100}
                 height={100}
               />
-              <Text style={styles.text}>{meal.name}</Text>
+              <View
+                style={{
+                  paddingHorizontal: 15,
+                  paddingTop: 15,
+                  paddingBottom: 10,
+                }}
+              >
+                <Text style={styles.text}>{meal.name}</Text>
+                <View
+                  style={{
+                    flexDirection: "row",
+                    alignItems: "center",
+                    marginTop: 5,
+                  }}
+                >
+                  <View style={{ flexDirection: "row", alignItems: "center" }}>
+                    <Ionicons name="time" color={Colors.primary} size={14} />
+                    <Text>{meal.name}</Text>
+                  </View>
+                  <View style={{ flexDirection: "row", alignItems: "center" }}>
+                    <Ionicons
+                      style={{ marginLeft: 10 }}
+                      name="star"
+                      size={14}
+                      color="yellow"
+                    />
+                    <Text>4.6</Text>
+                  </View>
+                </View>
+                <Text
+                  style={{ fontWeight: "bold", fontSize: 24, marginTop: 10 }}
+                >
+                  $19.99
+                </Text>
+              </View>
             </Pressable>
           </View>
         ))}
@@ -135,20 +170,20 @@ const styles = StyleSheet.create({
   innerContainer: {
     width: "47%",
     margin: 5,
-    borderRadius: 10,
+    borderRadius: 15,
+    borderBottomRightRadius: 0,
+    borderBottomLeftRadius: 0,
     backgroundColor: "#fff",
-    elevation: 10,
+    elevation: 5,
     shadowColor: "black",
     shadowOpacity: 0.2,
-    shadowRadius: 10,
+    shadowRadius: 5,
     overflow: "hidden",
+    marginTop: 15,
+    // height: 220,
   },
   text: {
     fontSize: 20,
-    position: "absolute",
-    bottom: 0,
-    left: 0,
-    color: "white",
-    fontWeight: "bold",
+    color: "#000",
   },
 });

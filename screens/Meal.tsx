@@ -105,6 +105,46 @@ const Meal = ({ route, navigation }: mealProps) => {
             <Text style={styles.iconsText}>4.6</Text>
           </View>
         </View>
+        <View style={{ padding: 20, flex: 1 }}>
+          <View
+            style={{
+              width: "100%",
+              flexDirection: "row",
+              justifyContent: "space-between",
+              alignItems: "center",
+            }}
+          >
+            <View
+              style={{
+                flexDirection: "row",
+                justifyContent: "space-between",
+                alignItems: "center",
+              }}
+            >
+              <FontAwesome5
+                style={{ marginLeft: 10 }}
+                name="store-alt"
+                size={24}
+                color={Colors.primary}
+              />
+              <Text>helllllllllllllllo</Text>
+            </View>
+            <View
+              style={{
+                flexDirection: "row",
+                justifyContent: "space-between",
+                alignItems: "center",
+              }}
+            >
+              <Ionicons
+                name="location-outline"
+                color={Colors.primary}
+                size={20}
+              />
+              <Text>helllllllllllllllo</Text>
+            </View>
+          </View>
+        </View>
       </View>
     </ScrollView>
   );
