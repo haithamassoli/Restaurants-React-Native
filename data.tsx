@@ -261,3 +261,46 @@ export const data = [
     ],
   },
 ];
+
+export const categories = [
+  {
+    id: 1,
+    name: "Fast Food",
+    image: require("./assets/categories/Picture2.png"),
+  },
+  {
+    id: 2,
+    name: "Pizza",
+    image: require("./assets/categories/Picture3.png"),
+  },
+  {
+    id: 3,
+    name: "Chinese",
+    image: require("./assets/categories/Picture4.png"),
+  },
+  {
+    id: 4,
+    name: "Italian",
+    image: require("./assets/categories/Picture5.png"),
+  },
+  {
+    id: 5,
+    name: "Arabic",
+    image: require("./assets/categories/Picture2.png"),
+  },
+  {
+    id: 6,
+    name: "Mexican",
+    image: require("./assets/categories/category1.png"),
+  },
+  {
+    id: 7,
+    name: "Indian",
+    image: require("./assets/categories/Picture5.png"),
+  },
+  {
+    id: 8,
+    name: "Thai",
+    image: require("./assets/categories/category1.png"),
+  },
+];

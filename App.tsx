@@ -92,7 +92,8 @@ export default function App() {
         <NavigationContainer>
           <BottomTabs.Navigator
             screenOptions={({ navigation, route }: any) => ({
-              tabBarActiveTintColor: Colors.primary,
+              tabBarActiveTintColor: Colors.primaryLight,
+              tabBarInactiveTintColor: "white",
               contentStyle: { backgroundColor: "#fff" },
               tabBarStyle: styles.bottomTabs,
               tabBarIconStyle: { display: "none" },
@@ -149,9 +150,14 @@ export default function App() {
               component={Favorite}
               options={{
                 tabBarIcon: ({ color, size }) => (
-                  <Ionicons name="heart" color={color} size={size} />
+                  <Ionicons name="heart-outline" color={color} size={size} />
                 ),
                 tabBarIconStyle: { display: "flex" },
+                tabBarBadge: 3,
+                tabBarBadgeStyle: {
+                  backgroundColor: Colors.primaryLight,
+                  color: "white",
+                },
               }}
             />
             <BottomTabs.Screen
@@ -202,14 +208,10 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   bottomTabs: {
-    padding: 10,
     height: 70,
-    marginHorizontal: 10,
-    marginVertical: 10,
-    borderRadius: 10,
     elevation: 10,
     shadowColor: "black",
-    backgroundColor: "#fff",
+    backgroundColor: Colors.primaryDark,
     shadowOpacity: 0.2,
     shadowRadius: 10,
   },

@@ -23,7 +23,6 @@ const { width, height } = Dimensions.get("window");
 const Meal = ({ route, navigation }: mealProps) => {
   useLayoutEffect(() => {
     navigation.setOptions({
-      tabBarItemStyle: { display: "none" },
       headerShown: false,
     });
   }, [navigation, route]);
@@ -45,9 +44,47 @@ const Meal = ({ route, navigation }: mealProps) => {
         <View style={styles.innerContainer}>
           <Image
             source={{ uri: filteredMeal[0].image }}
-            style={{ width: "100%", height: height / 2.2, resizeMode: "cover" }}
+            style={{
+              width: "100%",
+              height: height / 2.2,
+              resizeMode: "cover",
+            }}
             height={100}
           />
+          <View
+            style={{
+              height: 100,
+              width: "100%",
+              flexDirection: "row",
+              justifyContent: "space-between",
+              alignItems: "center",
+              position: "absolute",
+            }}
+          >
+            <Ionicons
+              name="ios-arrow-back"
+              size={24}
+              color={Colors.primary}
+              style={{
+                marginLeft: 20,
+                top: 0,
+                left: 0,
+                zIndex: 13,
+              }}
+              onPress={() => navigation.goBack()}
+            />
+            <Ionicons
+              name="heart-outline"
+              color={"white"}
+              size={24}
+              style={{
+                marginRight: 20,
+                top: 0,
+                left: 0,
+                zIndex: 3,
+              }}
+            />
+          </View>
           <Text style={styles.text}>{filteredMeal[0].name}</Text>
           <View style={styles.icons}>
             <Ionicons name="time" color={Colors.primary} size={24} />
@@ -84,8 +121,8 @@ const styles = StyleSheet.create({
   },
   innerContainer: {
     width: "100%",
-    // height: 200,
-    borderRadius: 10,
+    borderBottomEndRadius: 20,
+    borderBottomStartRadius: 20,
     overflow: "hidden",
     backgroundColor: "#fff",
     elevation: 10,
