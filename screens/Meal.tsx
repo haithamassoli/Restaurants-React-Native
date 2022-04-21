@@ -12,13 +12,12 @@ import { Ionicons } from "@expo/vector-icons";
 import { FontAwesome5 } from "@expo/vector-icons";
 import { Colors } from "../constants/Colors";
 import { useLayoutEffect } from "react";
+import { NativeStackScreenProps } from "@react-navigation/native-stack";
+import { RootStackParamList } from "../App";
 
-interface mealProps {
-  navigation?: any;
-  route?: any;
-}
+type mealProps = NativeStackScreenProps<RootStackParamList, "Meal">;
 
-const { width, height } = Dimensions.get("window");
+const { height } = Dimensions.get("window");
 
 const Meal = ({ route, navigation }: mealProps) => {
   useLayoutEffect(() => {

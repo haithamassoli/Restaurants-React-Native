@@ -29,20 +29,22 @@ import Login from "./screens/auth/Login";
 import { Colors } from "./constants/Colors";
 
 export type BottomTabParamList = {
-  Home: NavigatorScreenParams<RootStackParamList>;
-  Register: undefined;
+  Home: NavigatorScreenParams<RootStackParamList> | undefined;
   AllCities: undefined;
   Search: undefined;
-  ResturantMeals: { resturantId: string; cityId: string };
-  Meal: { resturantId: string; cityId: string; mealId: string };
   Favorite: undefined;
-  Login: undefined;
+  Register: undefined;
+  Login: { register: string };
 };
 
 export type RootStackParamList = {
   ResturantsCity: { id: number; city: string };
-  ResturantMeals: undefined;
-  Meal: undefined;
+  ResturantMeals: { resturantId: number; cityId: number };
+  Meal: {
+    mealId: number;
+    cityId: number;
+    resturantId: number;
+  };
 };
 
 export type RestaurantsStackParams = {};

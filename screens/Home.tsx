@@ -6,14 +6,16 @@ import {
   Image,
   ScrollView,
 } from "react-native";
+import type { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { data } from "../data";
 import { Ionicons } from "@expo/vector-icons";
 import { Colors } from "../constants/Colors";
+import { RootStackParamList } from "../App";
 
-interface resturantsCityProps {
-  navigation?: any;
-  route: any;
-}
+type resturantsCityProps = NativeStackScreenProps<
+  RootStackParamList,
+  "ResturantsCity"
+>;
 
 const Home = ({ route, navigation }: resturantsCityProps) => {
   return (

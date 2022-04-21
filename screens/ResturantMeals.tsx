@@ -12,13 +12,12 @@ import { data, categories } from "../data";
 import Carousel, { Pagination } from "react-native-snap-carousel";
 import { Colors } from "../constants/Colors";
 import { Ionicons } from "@expo/vector-icons";
+import { NativeStackScreenProps } from "@react-navigation/native-stack";
+import { RootStackParamList } from "../App";
 
-interface mealsProps {
-  navigation?: any;
-  route?: any;
-}
+type mealsProps = NativeStackScreenProps<RootStackParamList, "ResturantMeals">;
 
-const { width, height } = Dimensions.get("window");
+const { width } = Dimensions.get("window");
 
 const ResturantMeals = ({ route, navigation }: mealsProps) => {
   const [activeSlide, setActiveSlide] = useState(0);
