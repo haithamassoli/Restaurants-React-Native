@@ -7,15 +7,14 @@ import {
   ImageBackground,
   Pressable,
 } from "react-native";
+import type { BottomTabScreenProps } from "@react-navigation/bottom-tabs";
 import { LinearGradient } from "expo-linear-gradient";
 import { data } from "../data";
+import { BottomTabParamList } from "../App";
 
-interface allCitiesProps {
-  navigation?: any;
-  route?: any;
-}
+type allCitiesProps = BottomTabScreenProps<BottomTabParamList, "AllCities">;
 
-const AllCities = ({ route, navigation }: allCitiesProps) => {
+const AllCities = ({ navigation }: allCitiesProps) => {
   useLayoutEffect(() => {
     navigation.setOptions({
       tabBarStyle: { display: "none" },

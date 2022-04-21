@@ -7,10 +7,15 @@ import {
   Platform,
   StatusBar as reactNativeStatusBar,
 } from "react-native";
-import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import {
+  NavigationContainer,
+  NavigatorScreenParams,
+} from "@react-navigation/native";
+import {
+  createNativeStackNavigator,
+  NativeStackScreenProps,
+} from "@react-navigation/native-stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-
 import { Ionicons } from "@expo/vector-icons";
 
 import Home from "./screens/Home";
@@ -23,14 +28,34 @@ import Favorite from "./screens/Favorite";
 import Login from "./screens/auth/Login";
 import { Colors } from "./constants/Colors";
 
-const Stack = createNativeStackNavigator();
-const BottomTabs = createBottomTabNavigator();
+export type BottomTabParamList = {
+  Home: NavigatorScreenParams<RootStackParamList>;
+  Register: undefined;
+  AllCities: undefined;
+  Search: undefined;
+  ResturantMeals: { resturantId: string; cityId: string };
+  Meal: { resturantId: string; cityId: string; mealId: string };
+  Favorite: undefined;
+  Login: undefined;
+};
+
+export type RootStackParamList = {
+  ResturantsCity: { id: number; city: string };
+  ResturantMeals: undefined;
+  Meal: undefined;
+};
+
+export type RestaurantsStackParams = {};
+
+const Stack = createNativeStackNavigator<RootStackParamList>();
+const BottomTabs = createBottomTabNavigator<BottomTabParamList>();
 
 interface MealsProps {
   route: any;
   navigation?: any;
 }
 
+// type MealsProps = NativeStackScreenProps<RootStackParamList, ''>;
 interface userOverviewProps {
   route: any;
   navigation?: any;
@@ -110,10 +135,6 @@ export default function App() {
                     : "Amman"}
                 </Text>
               ),
-              // headerStyle: {  },
-              // headerTintColor: "white",
-              // tabBarActiveTintColor: "blue",
-              // headerShown: false,
             })}
           >
             <BottomTabs.Screen
@@ -178,22 +199,6 @@ export default function App() {
               }}
             />
           </BottomTabs.Navigator>
-          {/* <Stack.Navigator>
-          <Stack.Screen name="AllCities" component={AllCities} />
-          <Stack.Screen
-          name="UserOverview"
-            component={UserOverview}
-            options={{
-              title: "Haitham",
-              headerTitleStyle: {
-                fontWeight: "bold",
-                fontSize: 20,
-              },
-              headerShown: false,
-            }}
-          />
-          <Stack.Screen name="Home" component={Home} />
-        </Stack.Navigator> */}
         </NavigationContainer>
       </SafeAreaView>
     </>
