@@ -11,6 +11,7 @@ import { data } from "../data";
 import { Ionicons } from "@expo/vector-icons";
 import { Colors } from "../constants/Colors";
 import { RootStackParamList } from "../App";
+import SearchInput from "../components/ui/SearchInput";
 
 type resturantsCityProps = NativeStackScreenProps<
   RootStackParamList,
@@ -19,46 +20,42 @@ type resturantsCityProps = NativeStackScreenProps<
 
 const Home = ({ route, navigation }: resturantsCityProps) => {
   return (
-    <ScrollView>
-      {data
-        .filter(
-          (city) => city.city === (route.params ? route.params.city : "Amman")
-        )
-        .map((city) =>
-          city.resturants.map((resturant) => (
-            <View key={resturant.id} style={styles.innerContainer}>
-              <Pressable
-                onPress={() =>
-                  navigation.navigate("ResturantMeals", {
-                    resturantId: resturant.id,
-                    cityId: city.id,
-                  })
-                }
-              >
-                <Image
-                  source={{ uri: resturant.image }}
-                  style={{
-                    height: 200,
-                    width: "100%",
-                    resizeMode: "cover",
-                    flex: 1,
-                  }}
-                />
-                <View
-                  style={{
-                    paddingBottom: 8,
-                    paddingHorizontal: 10,
-                    paddingTop: 10,
-                  }}
+    <>
+      <View style={{ marginHorizontal: 20 }}>
+        <SearchInput />
+      </View>
+      <ScrollView>
+        {data
+          .filter(
+            (city) => city.city === (route.params ? route.params.city : "Amman")
+          )
+          .map((city) =>
+            city.resturants.map((resturant) => (
+              <View key={resturant.id} style={styles.innerContainer}>
+                <Pressable
+                  onPress={() =>
+                    navigation.navigate("ResturantMeals", {
+                      resturantId: resturant.id,
+                      cityId: city.id,
+                    })
+                  }
                 >
+                  <Image
+                    source={{ uri: resturant.image }}
+                    style={{
+                      height: 200,
+                      width: "100%",
+                      resizeMode: "cover",
+                      flex: 1,
+                    }}
+                  />
                   <View
                     style={{
-                      flexDirection: "row",
-                      justifyContent: "space-between",
-                      alignItems: "center",
+                      paddingBottom: 8,
+                      paddingHorizontal: 10,
+                      paddingTop: 10,
                     }}
                   >
-                    <Text style={styles.text}>{resturant.name}</Text>
                     <View
                       style={{
                         flexDirection: "row",
@@ -66,32 +63,41 @@ const Home = ({ route, navigation }: resturantsCityProps) => {
                         alignItems: "center",
                       }}
                     >
-                      <Ionicons
-                        style={{ marginRight: 5 }}
-                        name="star"
-                        size={20}
-                        color={Colors.primaryLight}
-                      />
-                      <Text style={styles.text}>3.7</Text>
+                      <Text style={styles.text}>{resturant.name}</Text>
+                      <View
+                        style={{
+                          flexDirection: "row",
+                          justifyContent: "space-between",
+                          alignItems: "center",
+                        }}
+                      >
+                        <Ionicons
+                          style={{ marginRight: 5 }}
+                          name="star"
+                          size={20}
+                          color={Colors.primaryLight}
+                        />
+                        <Text style={styles.text}>3.7</Text>
+                      </View>
+                    </View>
+                    <Text style={{ color: Colors.gray }}>Italian - Indian</Text>
+                    <View
+                      style={{
+                        flexDirection: "row",
+                        alignItems: "center",
+                        marginTop: 10,
+                      }}
+                    >
+                      <Ionicons name="time" color={Colors.primary} size={24} />
+                      <Text>30 mins - 1.3km</Text>
                     </View>
                   </View>
-                  <Text style={{ color: Colors.gray }}>Italian - Indian</Text>
-                  <View
-                    style={{
-                      flexDirection: "row",
-                      alignItems: "center",
-                      marginTop: 10,
-                    }}
-                  >
-                    <Ionicons name="time" color={Colors.primary} size={24} />
-                    <Text>30 mins - 1.3km</Text>
-                  </View>
-                </View>
-              </Pressable>
-            </View>
-          ))
-        )}
-    </ScrollView>
+                </Pressable>
+              </View>
+            ))
+          )}
+      </ScrollView>
+    </>
   );
 };
 

@@ -14,6 +14,7 @@ import { Colors } from "../constants/Colors";
 import { Ionicons } from "@expo/vector-icons";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { RootStackParamList } from "../App";
+import Meal from "../components/Meal";
 
 type mealsProps = NativeStackScreenProps<RootStackParamList, "ResturantMeals">;
 
@@ -45,8 +46,6 @@ const ResturantMeals = ({ route, navigation }: mealsProps) => {
                 borderRadius: 20,
                 marginTop: 20,
               }}
-              width={100}
-              height={100}
             />
           )}
           sliderWidth={width - 50}
@@ -85,14 +84,49 @@ const ResturantMeals = ({ route, navigation }: mealsProps) => {
                   borderRadius: 50,
                   resizeMode: "cover",
                 }}
-                width={100}
-                height={100}
               />
               <Text style={{ textAlign: "center" }}>{item.name}</Text>
             </>
           )}
           sliderWidth={width}
           itemWidth={100}
+        />
+      </View>
+      <View
+        style={{
+          backgroundColor: Colors.primaryLightest,
+          paddingBottom: 30,
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <View
+          style={{ marginTop: 20, marginLeft: 20, alignSelf: "flex-start" }}
+        >
+          <Text style={{ fontSize: 18, fontWeight: "bold" }}>
+            Popular for Breakfast
+          </Text>
+          <Text style={{ fontSize: 12, color: Colors.gray }}>
+            Start your day with the right mind
+          </Text>
+        </View>
+        <Carousel
+          data={mealsData}
+          renderItem={({ item }) => (
+            <Image
+              source={{ uri: item.image }}
+              style={{
+                width: "100%",
+                height: 200,
+                resizeMode: "cover",
+                borderRadius: 20,
+                marginTop: 20,
+              }}
+            />
+          )}
+          sliderWidth={width - 50}
+          itemWidth={250}
+          onSnapToItem={(index) => setActiveSlide(index)}
         />
       </View>
       <View style={styles.outerContainer}>
@@ -107,47 +141,7 @@ const ResturantMeals = ({ route, navigation }: mealsProps) => {
                 })
               }
             >
-              <Image
-                source={{ uri: meal.image }}
-                style={{ width: "100%", height: 125, resizeMode: "cover" }}
-                width={100}
-                height={100}
-              />
-              <View
-                style={{
-                  paddingHorizontal: 15,
-                  paddingTop: 15,
-                  paddingBottom: 10,
-                }}
-              >
-                <Text style={styles.text}>{meal.name}</Text>
-                <View
-                  style={{
-                    flexDirection: "row",
-                    alignItems: "center",
-                    marginTop: 5,
-                  }}
-                >
-                  <View style={{ flexDirection: "row", alignItems: "center" }}>
-                    <Ionicons name="time" color={Colors.primary} size={14} />
-                    <Text>{meal.name}</Text>
-                  </View>
-                  <View style={{ flexDirection: "row", alignItems: "center" }}>
-                    <Ionicons
-                      style={{ marginLeft: 10 }}
-                      name="star"
-                      size={14}
-                      color={Colors.primaryLight}
-                    />
-                    <Text>4.6</Text>
-                  </View>
-                </View>
-                <Text
-                  style={{ fontWeight: "bold", fontSize: 24, marginTop: 10 }}
-                >
-                  $19.99
-                </Text>
-              </View>
+              <Meal title={meal.name} image={meal.image} price={meal.price} />
             </Pressable>
           </View>
         ))}
@@ -179,7 +173,6 @@ const styles = StyleSheet.create({
     shadowRadius: 5,
     overflow: "hidden",
     marginTop: 15,
-    // height: 220,
   },
   text: {
     fontSize: 20,

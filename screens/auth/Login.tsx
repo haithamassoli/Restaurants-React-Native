@@ -72,38 +72,30 @@ const Login = ({ navigation, route }: loginProps) => {
                 styles.button,
                 { marginTop: 10, backgroundColor: "white" },
               ]}
+              textStyle={{ color: "#333" }}
+              image={require("../../assets/Google-Logo.png")}
               onPress={() =>
                 navigation.navigate("Login", {
                   register: "signup",
                 })
               }
             >
-              <Image
-                width={25}
-                height={25}
-                style={{ width: 20, height: 20 }}
-                source={require("../../assets/Google-Logo.png")}
-              />
-              <Text style={{ color: "#333" }}>&nbsp; Sign In With</Text>
+              &nbsp; Sign In With
             </Button>
             <Button
               style={[
                 styles.button,
-                { marginTop: 10, backgroundColor: "white" },
+                { marginTop: 10, backgroundColor: "white", color: "#333" },
               ]}
+              textStyle={{ color: "#333" }}
+              image={require("../../assets/Apple-Logo.png")}
               onPress={() =>
                 navigation.navigate("Login", {
                   register: "signup",
                 })
               }
             >
-              <Image
-                width={25}
-                height={25}
-                style={{ width: 20, height: 20 }}
-                source={require("../../assets/Apple.png")}
-              />
-              <Text style={{ color: "#333" }}>&nbsp; Sign In With</Text>
+              &nbsp; Sign In With
             </Button>
           </>
         )}
@@ -155,11 +147,9 @@ const styles = StyleSheet.create({
     marginRight: 10,
   },
   button: {
-    // position: "absolute",
     backgroundColor: Colors.primary,
     justifyContent: "flex-start",
     bottom: 100,
     width: "100%",
-    // width: 400,
   },
 });

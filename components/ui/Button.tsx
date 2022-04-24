@@ -1,13 +1,21 @@
-import { View, Text, Pressable, StyleSheet } from "react-native";
+import { View, Text, Pressable, Image, StyleSheet } from "react-native";
 import { Colors } from "../../constants/Colors";
 
 interface ButtonProps {
   children: string;
   style?: {};
+  textStyle?: {};
+  image?: any;
   onPress?: () => void;
 }
 
-const Button = ({ children, style, onPress }: ButtonProps) => {
+const Button = ({
+  children,
+  onPress,
+  style,
+  textStyle,
+  image,
+}: ButtonProps) => {
   return (
     <View style={[styles.outerContainer, style]}>
       <Pressable
@@ -18,7 +26,18 @@ const Button = ({ children, style, onPress }: ButtonProps) => {
         android_ripple={{ borderless: true }}
         onPress={onPress}
       >
-        <Text style={[styles.text]}>{children}</Text>
+        <View
+          style={{
+            flexDirection: "row",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          {image ? (
+            <Image style={{ width: 20, height: 20 }} source={image} />
+          ) : null}
+          <Text style={[styles.text, textStyle]}>{children}</Text>
+        </View>
       </Pressable>
     </View>
   );

@@ -47,8 +47,6 @@ export type RootStackParamList = {
   };
 };
 
-export type RestaurantsStackParams = {};
-
 const Stack = createNativeStackNavigator<RootStackParamList>();
 const BottomTabs = createBottomTabNavigator<BottomTabParamList>();
 
