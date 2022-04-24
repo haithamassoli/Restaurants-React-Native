@@ -27,6 +27,7 @@ import Meal from "./screens/Meal";
 import Favorite from "./screens/Favorite";
 import Login from "./screens/auth/Login";
 import { Colors } from "./constants/Colors";
+import Profile from "./screens/Profile";
 
 export type BottomTabParamList = {
   Home: NavigatorScreenParams<RootStackParamList> | undefined;
@@ -182,7 +183,7 @@ export default function App() {
             />
             <BottomTabs.Screen
               name="Register"
-              component={Register}
+              component={Profile}
               options={{
                 tabBarIcon: ({ color, size }) => (
                   <Ionicons name="person" color={color} size={size} />
