@@ -15,6 +15,7 @@ import { Ionicons } from "@expo/vector-icons";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { RootStackParamList } from "../App";
 import Meal from "../components/Meal";
+import DiscountLable from "../components/ui/DiscountLable";
 
 type mealsProps = NativeStackScreenProps<RootStackParamList, "ResturantMeals">;
 
@@ -113,19 +114,22 @@ const ResturantMeals = ({ route, navigation }: mealsProps) => {
         <Carousel
           data={mealsData}
           renderItem={({ item }) => (
-            <Image
-              source={{ uri: item.image }}
-              style={{
-                width: "100%",
-                height: 200,
-                resizeMode: "cover",
-                borderRadius: 20,
-                marginTop: 20,
-              }}
-            />
+            <View>
+              <Image
+                source={{ uri: item.image }}
+                style={{
+                  width: "100%",
+                  height: 200,
+                  resizeMode: "cover",
+                  borderRadius: 20,
+                  marginTop: 20,
+                }}
+              />
+              <DiscountLable discount="10" />
+            </View>
           )}
           sliderWidth={width - 50}
-          itemWidth={250}
+          itemWidth={190}
           onSnapToItem={(index) => setActiveSlide(index)}
         />
       </View>

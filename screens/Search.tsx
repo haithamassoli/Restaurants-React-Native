@@ -242,8 +242,9 @@ export default Search;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: 10,
-    marginHorizontal: 20,
+    paddingTop: 10,
+    paddingHorizontal: 20,
+    backgroundColor: "white",
   },
   header: {
     fontSize: 20,
