@@ -32,15 +32,17 @@ const Home = ({ route, navigation }: resturantsCityProps) => {
                   navigation.navigate("ResturantMeals", {
                     resturantId: resturant.id,
                     cityId: city.id,
-                    // city: resturant.name,
                   })
                 }
               >
                 <Image
                   source={{ uri: resturant.image }}
-                  style={{ height: 200, width: "100%", resizeMode: "cover" }}
-                  width={100}
-                  height={200}
+                  style={{
+                    height: 200,
+                    width: "100%",
+                    resizeMode: "cover",
+                    flex: 1,
+                  }}
                 />
                 <View
                   style={{

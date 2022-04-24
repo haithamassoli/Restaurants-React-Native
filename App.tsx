@@ -72,7 +72,6 @@ function Meals({ route, navigation }: MealsProps) {
         name="ResturantsCity"
         component={Home}
         options={{
-          // headerShown: false,
           title: "",
           headerLeft: () => (
             <>

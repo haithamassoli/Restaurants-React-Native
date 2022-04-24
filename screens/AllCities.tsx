@@ -44,7 +44,6 @@ const AllCities = ({ navigation }: allCitiesProps) => {
               <ImageBackground
                 source={{ uri: city.cityImage }}
                 style={{ width: "100%", height: 120 }}
-                height={120}
               >
                 <Text style={styles.text}>{city.city}</Text>
               </ImageBackground>

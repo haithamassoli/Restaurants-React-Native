@@ -48,7 +48,6 @@ const Meal = ({ route, navigation }: mealProps) => {
               height: height / 2.2,
               resizeMode: "cover",
             }}
-            height={100}
           />
           <View
             style={{
