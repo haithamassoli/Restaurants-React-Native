@@ -3,11 +3,10 @@ import { View, Text, StyleSheet, TextInput, Image } from "react-native";
 import Checkbox from "expo-checkbox";
 import Button from "../../components/ui/Button";
 import { Colors } from "../../constants/Colors";
+import { BottomTabParamList } from "../../App";
+import { BottomTabScreenProps } from "@react-navigation/bottom-tabs";
 
-interface loginProps {
-  navigation: any;
-  route: any;
-}
+type loginProps = BottomTabScreenProps<BottomTabParamList, "Login">;
 
 const Login = ({ navigation, route }: loginProps) => {
   const [formValues, setFormValues] = useState({

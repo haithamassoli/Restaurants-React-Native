@@ -24,35 +24,40 @@ export const data = [
             name: "Meal 2",
             price: "20",
             description: "Meal 2 description",
-            image: "https://picsum.photos/id/237/100/100",
+            image:
+              "https://cdn.cnn.com/cnnnext/dam/assets/200120161356-cnn-worlds-best-new-restaurants---madera---simon-brown-photography-1-1-full-169.jpg",
           },
           {
             id: 3,
             name: "Meal 3",
             price: "30",
             description: "Meal 3 description",
-            image: "https://picsum.photos/id/237/100/100",
+            image:
+              "https://cdn.cnn.com/cnnnext/dam/assets/200120161356-cnn-worlds-best-new-restaurants---madera---simon-brown-photography-1-1-full-169.jpg",
           },
         ],
       },
       {
         id: 2,
         name: "Resturant 2",
-        image: "https://picsum.photos/id/237/100/100",
+        image:
+          "https://cdn.cnn.com/cnnnext/dam/assets/200120161356-cnn-worlds-best-new-restaurants---madera---simon-brown-photography-1-1-full-169.jpg",
         meals: [
           {
             id: 1,
             name: "Meal 1",
             price: "10",
             description: "Meal 1 description",
-            image: "https://picsum.photos/id/237/100/100",
+            image:
+              "https://cdn.cnn.com/cnnnext/dam/assets/200120161356-cnn-worlds-best-new-restaurants---madera---simon-brown-photography-1-1-full-169.jpg",
           },
           {
             id: 2,
             name: "Meal 2",
             price: "20",
             description: "Meal 2 description",
-            image: "https://picsum.photos/id/237/100/100",
+            image:
+              "https://cdn.cnn.com/cnnnext/dam/assets/200120161356-cnn-worlds-best-new-restaurants---madera---simon-brown-photography-1-1-full-169.jpg",
           },
         ],
       },
@@ -75,14 +80,16 @@ export const data = [
             name: "Meal 2",
             price: "20",
             description: "Meal 2 description",
-            image: "https://picsum.photos/id/237/100/100",
+            image:
+              "https://cdn.cnn.com/cnnnext/dam/assets/200120161356-cnn-worlds-best-new-restaurants---madera---simon-brown-photography-1-1-full-169.jpg",
           },
           {
             id: 3,
             name: "Meal 3",
             price: "30",
             description: "Meal 3 description",
-            image: "https://picsum.photos/id/237/100/100",
+            image:
+              "https://cdn.cnn.com/cnnnext/dam/assets/200120161356-cnn-worlds-best-new-restaurants---madera---simon-brown-photography-1-1-full-169.jpg",
           },
         ],
       },
@@ -97,77 +104,88 @@ export const data = [
       {
         id: 1,
         name: "Resturant 1",
-        image: "https://picsum.photos/id/237/100/100",
+        image:
+          "https://cdn.cnn.com/cnnnext/dam/assets/200120161356-cnn-worlds-best-new-restaurants---madera---simon-brown-photography-1-1-full-169.jpg",
         meals: [
           {
             id: 1,
             name: "Meal 1",
             price: "10",
             description: "Meal 1 description",
-            image: "https://picsum.photos/id/237/100/100",
+            image:
+              "https://cdn.cnn.com/cnnnext/dam/assets/200120161356-cnn-worlds-best-new-restaurants---madera---simon-brown-photography-1-1-full-169.jpg",
           },
           {
             id: 2,
             name: "Meal 2",
             price: "20",
             description: "Meal 2 description",
-            image: "https://picsum.photos/id/237/100/100",
+            image:
+              "https://cdn.cnn.com/cnnnext/dam/assets/200120161356-cnn-worlds-best-new-restaurants---madera---simon-brown-photography-1-1-full-169.jpg",
           },
           {
             id: 3,
             name: "Meal 3",
             price: "30",
             description: "Meal 3 description",
-            image: "https://picsum.photos/id/237/100/100",
+            image:
+              "https://cdn.cnn.com/cnnnext/dam/assets/200120161356-cnn-worlds-best-new-restaurants---madera---simon-brown-photography-1-1-full-169.jpg",
           },
         ],
       },
       {
         id: 2,
         name: "Resturant 2",
-        image: "https://picsum.photos/id/237/100/100",
+        image:
+          "https://cdn.cnn.com/cnnnext/dam/assets/200120161356-cnn-worlds-best-new-restaurants---madera---simon-brown-photography-1-1-full-169.jpg",
         meals: [
           {
             id: 1,
             name: "Meal 1",
             price: "10",
             description: "Meal 1 description",
-            image: "https://picsum.photos/id/237/100/100",
+            image:
+              "https://cdn.cnn.com/cnnnext/dam/assets/200120161356-cnn-worlds-best-new-restaurants---madera---simon-brown-photography-1-1-full-169.jpg",
           },
           {
             id: 2,
             name: "Meal 2",
             price: "20",
             description: "Meal 2 description",
-            image: "https://picsum.photos/id/237/100/100",
+            image:
+              "https://cdn.cnn.com/cnnnext/dam/assets/200120161356-cnn-worlds-best-new-restaurants---madera---simon-brown-photography-1-1-full-169.jpg",
           },
         ],
       },
       {
         id: 3,
         name: "Resturant 3",
-        image: "https://picsum.photos/id/237/100/100",
+        image:
+          "https://cdn.cnn.com/cnnnext/dam/assets/200120161356-cnn-worlds-best-new-restaurants---madera---simon-brown-photography-1-1-full-169.jpg",
         meals: [
           {
             id: 1,
             name: "Meal 1",
             price: "10",
             description: "Meal 1 description",
-            image: "https://picsum.photos/id/237/100/100",
+            image:
+              "https://cdn.cnn.com/cnnnext/dam/assets/200120161356-cnn-worlds-best-new-restaurants---madera---simon-brown-photography-1-1-full-169.jpg",
           },
           {
             id: 2,
             name: "Meal 2",
             price: "20",
             description: "Meal 2 description",
-            image: "https://picsum.photos/id/237/100/100",
+            image:
+              "https://cdn.cnn.com/cnnnext/dam/assets/200120161356-cnn-worlds-best-new-restaurants---madera---simon-brown-photography-1-1-full-169.jpg",
           },
           {
             id: 3,
             name: "Meal 3",
             price: "30",
             description: "Meal 3 description",
-            image: "https://picsum.photos/id/237/100/100",
+            image:
+              "https://cdn.cnn.com/cnnnext/dam/assets/200120161356-cnn-worlds-best-new-restaurants---madera---simon-brown-photography-1-1-full-169.jpg",
           },
         ],
       },
@@ -212,49 +230,56 @@ export const data = [
       {
         id: 2,
         name: "Resturant 2",
-        image: "https://picsum.photos/id/237/100/100",
+        image:
+          "https://cdn.cnn.com/cnnnext/dam/assets/200120161356-cnn-worlds-best-new-restaurants---madera---simon-brown-photography-1-1-full-169.jpg",
         meals: [
           {
             id: 1,
             name: "Meal 1",
             price: "10",
             description: "Meal 1 description",
-            image: "https://picsum.photos/id/237/100/100",
+            image:
+              "https://cdn.cnn.com/cnnnext/dam/assets/200120161356-cnn-worlds-best-new-restaurants---madera---simon-brown-photography-1-1-full-169.jpg",
           },
           {
             id: 2,
             name: "Meal 2",
             price: "20",
             description: "Meal 2 description",
-            image: "https://picsum.photos/id/237/100/100",
+            image:
+              "https://cdn.cnn.com/cnnnext/dam/assets/200120161356-cnn-worlds-best-new-restaurants---madera---simon-brown-photography-1-1-full-169.jpg",
           },
         ],
       },
       {
         id: 3,
         name: "Resturant 3",
-        image: "https://picsum.photos/id/237/100/100",
+        image:
+          "https://cdn.cnn.com/cnnnext/dam/assets/200120161356-cnn-worlds-best-new-restaurants---madera---simon-brown-photography-1-1-full-169.jpg",
         meals: [
           {
             id: 1,
             name: "Meal 1",
             price: "10",
             description: "Meal 1 description",
-            image: "https://picsum.photos/id/237/100/100",
+            image:
+              "https://cdn.cnn.com/cnnnext/dam/assets/200120161356-cnn-worlds-best-new-restaurants---madera---simon-brown-photography-1-1-full-169.jpg",
           },
           {
             id: 2,
             name: "Meal 2",
             price: "20",
             description: "Meal 2 description",
-            image: "https://picsum.photos/id/237/100/100",
+            image:
+              "https://cdn.cnn.com/cnnnext/dam/assets/200120161356-cnn-worlds-best-new-restaurants---madera---simon-brown-photography-1-1-full-169.jpg",
           },
           {
             id: 3,
             name: "Meal 3",
             price: "30",
             description: "Meal 3 description",
-            image: "https://picsum.photos/id/237/100/100",
+            image:
+              "https://cdn.cnn.com/cnnnext/dam/assets/200120161356-cnn-worlds-best-new-restaurants---madera---simon-brown-photography-1-1-full-169.jpg",
           },
         ],
       },

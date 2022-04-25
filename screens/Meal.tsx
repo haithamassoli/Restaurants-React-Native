@@ -14,6 +14,8 @@ import { Colors } from "../constants/Colors";
 import { useLayoutEffect } from "react";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { RootStackParamList } from "../App";
+import MealsAmount from "../components/MealsAmount";
+import Button from "../components/ui/Button";
 
 type mealProps = NativeStackScreenProps<RootStackParamList, "Meal">;
 
@@ -125,7 +127,7 @@ const Meal = ({ route, navigation }: mealProps) => {
                 size={24}
                 color={Colors.primary}
               />
-              <Text style={{ marginLeft: 5 }}>Resturan 1</Text>
+              <Text style={{ marginLeft: 5 }}>Resturant 1</Text>
             </View>
             <View
               style={{
@@ -140,6 +142,55 @@ const Meal = ({ route, navigation }: mealProps) => {
                 size={20}
               />
               <Text>Amman</Text>
+            </View>
+          </View>
+          <View
+            style={{
+              padding: 10,
+              marginTop: 10,
+            }}
+          >
+            <Text
+              style={{
+                fontSize: 18,
+                fontWeight: "bold",
+              }}
+            >
+              Discription
+            </Text>
+            <View>
+              <Text
+                style={{
+                  fontSize: 16,
+                  color: Colors.gray,
+                }}
+              >
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis
+                obcaecati commodi similique. Modi quasi dolore error numquam
+                aliquam! Id nihil provident totam iste qui ea corrupti
+                obcaecati. Sit, eos eaque. Lorem ipsum dolor sit amet
+                consectetur adipisicing elit. Facilis obcaecati commodi
+                similique. Modi quasi dolore error numquam aliquam! Id nihil
+                provident totam iste qui ea corrupti obcaecati. Sit, eos eaque.
+              </Text>
+            </View>
+            <View style={{ marginTop: 30 }}>
+              <Text style={{ fontSize: 16, marginBottom: 10 }}>
+                Total:&nbsp;
+                <Text style={{ fontWeight: "bold", fontSize: 22 }}>$150</Text>
+              </Text>
+              <View
+                style={{
+                  flexDirection: "row",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                }}
+              >
+                <MealsAmount />
+                <Button style={{ backgroundColor: Colors.primary }}>
+                  Add to Cart
+                </Button>
+              </View>
             </View>
           </View>
         </View>

@@ -51,18 +51,9 @@ export type RootStackParamList = {
 const Stack = createNativeStackNavigator<RootStackParamList>();
 const BottomTabs = createBottomTabNavigator<BottomTabParamList>();
 
-interface MealsProps {
-  route: any;
-  navigation?: any;
-}
+type MealsProps = NativeStackScreenProps<RootStackParamList>;
 
-// type MealsProps = NativeStackScreenProps<RootStackParamList, ''>;
-interface userOverviewProps {
-  route: any;
-  navigation?: any;
-}
-
-function Meals({ route, navigation }: MealsProps) {
+function Meals({ route, navigation }: MealsProps | any) {
   return (
     <Stack.Navigator
       screenOptions={{ contentStyle: { backgroundColor: "white" } }}

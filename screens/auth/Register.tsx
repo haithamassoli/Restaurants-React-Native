@@ -1,11 +1,11 @@
+import { BottomTabScreenProps } from "@react-navigation/bottom-tabs";
 import { useLayoutEffect } from "react";
 import { View, Text, StyleSheet, Image } from "react-native";
+import { BottomTabParamList } from "../../App";
 import Button from "../../components/ui/Button";
 import { Colors } from "../../constants/Colors";
 
-interface registerProps {
-  navigation: any;
-}
+type registerProps = BottomTabScreenProps<BottomTabParamList, "Register">;
 
 const Register = ({ navigation }: registerProps) => {
   useLayoutEffect(() => {
